@@ -1,0 +1,30 @@
+button{
+    background-color:rgb(168, 52, 235);
+    border-radius: 8px;
+    border: none;
+    color: white;
+    width: auto;
+    height: 30px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(255, 0, 234);
+}
+
+.deactivated{
+    background-color: rgb(168, 52, 235);
+        border-radius: 8px;
+}
+
+.activated {
+    background-color: rgb(255, 0, 234);
+    border-radius: 8px;
+}
+
+.button-container {
+    margin-top: 30px;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 14px;
+}
