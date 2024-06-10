@@ -83,6 +83,12 @@ h1 {
 #players.highlight-player li.active .player-symbol {
   color: #f6e35a;
 }
+.player-symbol{
+    color: #f6e35a;
+    background-color: #7a733b;
+    padding: 8px 13px 8px 13px;
+    border-radius: 4px;
+}
 
 #players button {
   width: 3rem;
@@ -188,6 +194,7 @@ ol {
   cursor: pointer;
   font-family: 'Caprasimo', cursive;
   padding: 1rem;
+  border-radius: 4px;
 }
 
 #game-over {

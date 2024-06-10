@@ -3,10 +3,10 @@ import EditableplayerName from "./EditablePlayerName";
 import Button1 from "./buttons/button1";
 
 export default function Players(props) {
-  const { name, symbol } = props;
+  const { name, symbol, isActive } = props;
   const [playerName, setPlayerName] = useState(
-    localStorage.getItem(name + "playerName")
-      ? localStorage.getItem(name + "playerName")
+    sessionStorage.getItem(name + "playerName")
+      ? sessionStorage.getItem(name + "playerName")
       : name
   );
   const [isEditing, setIsEditing] = useState(false);
@@ -16,7 +16,7 @@ export default function Players(props) {
     setIsEditing((prevIsEditing) => {
       const newIsEditing = !prevIsEditing;
       setBtnContents(newIsEditing ? "Save" : "Edit");
-      localStorage.setItem(name + "playerName", playerName);
+      sessionStorage.setItem(name + "playerName", playerName);
       return newIsEditing;
     });
     console.log(isEditing);
@@ -28,14 +28,14 @@ export default function Players(props) {
 
   return (
     <>
-      <li>
+      <li className={isActive ? "active" : undefined}>
+        <span className="player-symbol">{symbol}</span>
         <span className="player">
           <EditableplayerName
             playerName={playerName}
             isEditing={isEditing}
             handleChange={handleChange}
           />
-          <span className="player-symbol">{symbol}</span>
         </span>
         <Button1 contents={btnContents} handleEditClick={handleEditClick} />
       </li>
